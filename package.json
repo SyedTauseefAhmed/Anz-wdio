@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/wdio run wdio.conf.js"
   },
-  "author": "Afsar Ali",
+  "author": "Syed Tauseef Ahmed",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.5",
