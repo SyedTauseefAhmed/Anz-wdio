@@ -1,5 +1,4 @@
 class MyAccount {
-  //  Page Objects
   get btnMyAddress() {
     return $(".icon-building");
   }
@@ -16,7 +15,6 @@ class MyAccount {
     return $(".icon-heart");
   }
 
-  // Address Page
   get btnPageHeading() {
     return $(".page-heading");
   }
@@ -37,35 +35,33 @@ class MyAccount {
     return $(".address_address2");
   }
 
-  get myAccountSection(){
+  get myAccountSection() {
     return $("#my-account");
   }
 
-  get linkWomen(){
-    return $('.sf-with-ul');
+  get linkWomen() {
+    return $(".sf-with-ul");
   }
 
-  get tshirtLink(){
+  get tshirtLink() {
     return $("img[title='Faded Short Sleeve T-shirts']");
   }
 
-  get checkOutMessage(){
+  get checkOutMessage() {
     return $("div.layer_cart_product");
   }
 
-  get addressPageLink(){
+  get addressPageLink() {
     return $('[name="processAddress"]');
   }
 
-  get checkboxTerm(){
+  get checkboxTerm() {
     return $('[name="cgv"]');
   }
 
-  get checkoutCarrier(){
+  get checkoutCarrier() {
     return $('[name="processCarrier"]');
   }
-
-  // Actions
 
   navigateToAddress = async () => {
     await this.btnMyAddress.click();
@@ -76,32 +72,22 @@ class MyAccount {
   };
 
   navigateToProductPage = async () => {
-    await browser.url("http://automationpractice.com/index.php?id_product=7&controller=product");
-  };  
+    await browser.url(
+      "http://automationpractice.com/index.php?id_product=7&controller=product"
+    );
+  };
 
-  
-
-navigateToCheckOutPage = async () => {
-  await browser.url("http://automationpractice.com/index.php?controller=order");
-  await browser.url("http://automationpractice.com/index.php?controller=order&step=1");
-  await this.addressPageLink.click();
-  await this.checkboxTerm.click();
-  await this.checkoutCarrier.click();
-};
-
-//navigateToCheckOutPage = async() => {
-
- // await browser.url("http://automationpractice.com/index.php?controller=order");
-  //await browser.url("http://automationpractice.com/index.php?controller=order&step=1");
-  //await $('[name="processAddress"]').click();
-  //await $('[name="cgv"]').click();
- // await $('[name="processCarrier"]').click();
-  
-  				
-
-//};
-    
-   
+  navigateToCheckOutPage = async () => {
+    await browser.url(
+      "http://automationpractice.com/index.php?controller=order"
+    );
+    await browser.url(
+      "http://automationpractice.com/index.php?controller=order&step=1"
+    );
+    await this.addressPageLink.click();
+    await this.checkboxTerm.click();
+    await this.checkoutCarrier.click();
+  };
 }
 
 export default new MyAccount();

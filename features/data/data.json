@@ -1,0 +1,27 @@
+{
+    "names" : {
+        "firstname": "john",
+        "lastname" : "chris"
+    },
+    "cred": {
+        "password": "password123"
+    },
+    "dateOfBirth": {
+        "day": 4,
+        "month": 5,
+        "year": 4
+    },
+    "company": "xyz",
+    "address" : {
+        "address1": "1st line",
+        "pincode": 11111,
+        "city": "Singapore"
+    },
+    "postalcode" : "00000",
+    "mobileNumber": "123456789",
+    "aliasAdd": "My address",
+    "addInfo": "This is My additional Information",
+    "phone": "12334566",
+    "mobphone": "+65 94657845",
+    "addressAlias": "My Address"
+}

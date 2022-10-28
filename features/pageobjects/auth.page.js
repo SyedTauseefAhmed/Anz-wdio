@@ -1,6 +1,5 @@
+import testData from "../data/data.json";
 class AuthPage {
-  // Page Objects
-
   get input_CreateAccountEmail() {
     return $("#email_create");
   }
@@ -24,7 +23,7 @@ class AuthPage {
   get input_Email() {
     return $("#email");
   }
-
+  
   get input_Password() {
     return $("#passwd");
   }
@@ -109,8 +108,6 @@ class AuthPage {
     return $(".logout");
   }
 
-  // Login section
-
   get input_login_Email() {
     return $("#email");
   }
@@ -122,8 +119,6 @@ class AuthPage {
   get btn_SubmitLogin() {
     return $("#SubmitLogin");
   }
-
-  //Actions
 
   createAccount = async (emailId, address) => {
     await this.input_CreateAccountEmail.waitForExist({ timeout: 5000 });
@@ -138,39 +133,32 @@ class AuthPage {
     await this.input_FirstName.setValue(address.firstName);
     await this.input_LastName.setValue(address.lastName);
     await this.input_Email.setValue(emailId);
-    await this.input_Password.setValue("password123");
+    await this.input_Password.setValue(testData.cred.password);
 
-    // DOB
     await this.drpbx_Days.selectByIndex(12);
     await this.drpbx_Months.selectByAttribute("value", "3");
     await this.drpbx_Years.selectByAttribute("value", "1992");
 
     await this.checkbox_NewsLetter.click();
     await this.checkbox_UniformOption.click();
-
-    //Address
     await this.input_address_FirstName.setValue(address.firstName);
     await this.input_address_LastName.setValue(address.lastName);
     await this.input_address_Company.setValue(address.company);
     await this.input_address_Address1.setValue(address.address1);
     await this.input_address_Address2.setValue(address.address2);
-    await this.input_address_City.setValue("Singapore");
+    await this.input_address_City.setValue(testData.address.city);
     await this.drpbx_State.selectByIndex(2);
-    await this.input_PostalCode.setValue("00000");
-    await this.txt_AdditionalInfo.setValue(
-      "This is My additional Information "
-    );
-    await this.input_Phone.setValue("12334566");
-    await this.input_MobilePhone.setValue("+65 94657845");
-    await this.input_AddressAlias.setValue("My Address");
+    await this.input_PostalCode.setValue(testData.postalcode);
+    await this.txt_AdditionalInfo.setValue(testData.addInfo);
+    await this.input_Phone.setValue(testData.phone);
+    await this.input_MobilePhone.setValue(testData.mobphone);
+    await this.input_AddressAlias.setValue(testData.addressAlias);
     await this.btn_Submit.click();
   };
 
-  //SignIn Using newly created Account
-
   signIn = async (username) => {
     await this.input_login_Email.setValue(username);
-    await this.input_login_Password.setValue("password123");
+    await this.input_login_Password.setValue(testData.cred.password);
     await this.btn_SubmitLogin.click();
   };
 

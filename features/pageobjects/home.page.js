@@ -1,5 +1,4 @@
 class HomePage {
-  // WebElement Locators
   get btnSignIn() {
     return $(".login");
   }
@@ -19,8 +18,6 @@ class HomePage {
   get img_Logo() {
     return $(".logo.img-responsive");
   }
-
-  // Actions
 
   async navigateToLoginPage() {
     await this.btnSignIn.click();
